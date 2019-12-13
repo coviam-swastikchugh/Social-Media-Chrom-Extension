@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+
+  "name": "Social Media Extension",
+  "description": "This extension will enable you to access all your social media accounts from one place.",
+  "version": "1.0",
+  "background": {
+    "page": "background.html"
+  },
+
+  "browser_action": {
+   "default_icon": "/images/icon.png",
+   "default_popup": "index.html"
+  },
+  "permissions": [
+   "activeTab"
+   ]
+}
