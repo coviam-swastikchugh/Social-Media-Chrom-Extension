@@ -5,34 +5,92 @@
     <script src="./js/index.js"></script>
   </head>
   <body>
-    <div>
-      <a id="facebook"><img src="/images/facebook.png"></a>
-      <a id="instagram"><img src="/images/instagram.png"></a>
+    <div class="header">
+      Social Media Extension
+    </div>
+    <div class="body">
+      <div class="favourite-panel">
+          <a id="facebook"><img src="/images/facebook.png"></a>
+          <div class="favourite-panel__info-box">
+              Logged In As Samisha Khurana
+              <br>
+              Last Used 2:29 PM
+              <br>
+              Total Usage Today 01:23 hrs
+          </div>
+      </div>
+      <div class="favourite-panel">
+          <a id="instagram"><img src="/images/instagram.png"></a>
+          <div class="favourite-panel__info-box">
+              Logged In As Samisha Khurana
+              <br>
+              Last Used 2:29 PM
+              <br>
+              Total Usage Today 01:23 hrs
+          </div>
+      </div>
+      <div class="favourite-panel">
+          <a id="linkedin"><img src="/images/linkedin.png"></a>
+          <div class="favourite-panel__info-box">
+              Logged In As Samisha Khurana
+              <br>
+              Last Used 2:29 PM
+              <br>
+              Total Usage Today 01:23 hrs
+          </div>
+      </div>
       <!-- <a id=""><img src="@/static/images/twitter.png"></a> -->
-      <a id="linkedin"><img src="/images/linkedin.png"></a>
+    </div>
+    <div class="footer">
+      <a>Select favourites</a>
     </div>
   </body>
 </html>
 
 <style>
-  * {
-    border-radius: 5px;
-    border: 1px solid transparent;
-  }
-
   body {
     margin: 0;
   }
   div {
-    width: max-content;
-    padding: 3px;
+  }
+  .header {
+    color: #888;
+    font-size: 14px;
+    padding: 18px 0px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    border-bottom: 1px solid #cdcdcd;
+    width: 100%;
+  }
+  .body {
+
   }
   a {
     display: inline-block;
     padding: 3px;
   }
   img {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+  }
+  .favourite-panel {
+    color: #aaa;
+    font-size: 10px;
+    line-height: 1.2;
+    border-bottom: 1px solid #cdcdcd;
+    margin: 4px;
+    padding: 5px;
+    width: 210px;
+  }
+  .favourite-panel__info-box {
+    display: inline-block;
+    padding: 2px;
+  }
+  .footer {
+    color: #bdbdbd;
+    font-size: 10px;
+    text-align: right;
+    cursor: pointer;
   }
 </style>
