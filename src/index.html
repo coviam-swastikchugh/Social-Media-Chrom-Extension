@@ -2,68 +2,39 @@
 <html>
   <head>
     <title>Social Media Extension</title>
+    <!-- <script async defer src="https://connect.facebook.net/es_LA/sdk.js"></script>  -->
     <script src="./js/index.js"></script>
+    <script src="./constants.js"></script>
+    <script src="./app-panel.js"></script>
+    <script src="./share-button.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="header">
-      Social Media Extension
+      Connect :)
     </div>
     <div class="body">
-      <div class="favourite-panel">
-          <a id="facebook"><img src="/images/facebook.png"></a>
-          <div class="favourite-panel__info-box">
-              Logged In As Samisha Khurana
-              <br>
-              Last Used 2:29 PM
-              <br>
-              Total Usage Today 01:23 hrs
-          </div>
-      </div>
-      <div class="favourite-panel">
-          <a id="instagram"><img src="/images/instagram.png"></a>
-          <div class="favourite-panel__info-box">
-              Logged In As Samisha Khurana
-              <br>
-              Last Used 2:29 PM
-              <br>
-              Total Usage Today 01:23 hrs
-          </div>
-      </div>
-      <div class="favourite-panel">
-          <a id="linkedin"><img src="/images/linkedin.png"></a>
-          <div class="favourite-panel__info-box">
-              Logged In As Samisha Khurana
-              <br>
-              Last Used 2:29 PM
-              <br>
-              Total Usage Today 01:23 hrs
-          </div>
-      </div>
-      <!-- <a id=""><img src="@/static/images/twitter.png"></a> -->
-    </div>
-    <div class="footer">
-      <a>Select favourites</a>
-    </div>
   </body>
 </html>
 
 <style>
   body {
     margin: 0;
+    width: 200px;
   }
   div {
   }
   .header {
     color: #888;
-    font-size: 14px;
-    padding: 18px 0px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 32px;
+    padding: 12px 0px;
+    font-family: 'Dancing Script', cursive;
     text-align: center;
     border-bottom: 1px solid #cdcdcd;
     width: 100%;
   }
   .body {
-
+    padding: 5px;
   }
   a {
     display: inline-block;
