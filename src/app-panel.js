@@ -18,25 +18,33 @@ class AppPanel extends HTMLElement {
         img {
           display: inline-block;
         }
-      </style>
-      <div class="app-panel__container">
+      </style>`
+    if (information.appName !== 'instagram') {
+      this.innerHTML += `<div class="app-panel__container">
+        <a><img src="${information.image}" data-href="${information.feedUrl}"></a>
+        <div class="app-panel__information">
+          Logged In As ${information.userName}
+          <br>
+          <share-button></share-button>
+        </div>
+      </div>`
+    } else {
+      this.innerHTML += `<div class="app-panel__container">
         <a><img src="${information.image}" data-href="${information.feedUrl}"></a>
         <div class="app-panel__information">
           Logged In As ${information.userName}
           <br>
         </div>
-      </div>
-    `;
-  }
-
-  connectedCallback () {
-    let sh = this.attachShadow({mode: 'open'})
-    let shareButton = document.createElement('share-button')
-    document.appendChild(shareButton)
+      </div>`
+    }
   }
 
   socialMediaClick (url) {
     window.open(url)
+  }
+
+  shareClick (url, tabUrl) {
+    document.querySelector('share-button').shareUrl(url, tabUrl)
   }
 }
 

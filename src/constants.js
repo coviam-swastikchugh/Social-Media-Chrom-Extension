@@ -8,7 +8,7 @@ var appInfo = [
   },
   {
     'appName': 'twitter',
-    'shareUrl': '"http://twitter.com/share?url="',
+    'shareUrl': 'http://twitter.com/share?url=',
     'feedUrl': 'https://www.twitter.com',
     'image': '/images/twitter.png',
     'userName': ''
