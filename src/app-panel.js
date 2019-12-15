@@ -15,13 +15,15 @@ class AppPanel extends HTMLElement {
           color: #aaa;
           line-height: 1.6;
         }
-        img {
+        .panel-image {
           display: inline-block;
+          width: 25px;
+          height: 25px;
         }
       </style>`
     if (information.appName !== 'instagram') {
       this.innerHTML += `<div class="app-panel__container">
-        <a><img src="${information.image}" data-href="${information.feedUrl}"></a>
+        <a><img class="panel-image" src="${information.image}" data-href="${information.feedUrl}"></a>
         <div class="app-panel__information">
           Logged In As ${information.userName}
           <br>
@@ -30,7 +32,7 @@ class AppPanel extends HTMLElement {
       </div>`
     } else {
       this.innerHTML += `<div class="app-panel__container">
-        <a><img src="${information.image}" data-href="${information.feedUrl}"></a>
+        <a><img class="panel-image" src="${information.image}" data-href="${information.feedUrl}"></a>
         <div class="app-panel__information">
           Logged In As ${information.userName}
           <br>
