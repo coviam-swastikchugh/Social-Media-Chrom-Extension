@@ -1,30 +1,35 @@
 var appInfo = [
   {
-    'appName': 'facebook',
+    'appName': 'Facebook',
     'shareUrl': 'https://www.facebook.com/sharer.php?u=',
     'feedUrl': 'https://www.facebook.com',
     'image': '/images/facebook.png',
-    'userName': ''
+    'faIconContent': 'fa fa-facebook',
+    'color': '#3b5998'
   },
   {
-    'appName': 'twitter',
+    'appName': 'Twitter',
     'shareUrl': 'http://twitter.com/share?url=',
     'feedUrl': 'https://www.twitter.com',
     'image': '/images/twitter.png',
-    'userName': ''
+    'faIconContent': 'fa fa-twitter',
+    'color': '#00acee'
   },
   {
-    'appName': 'linkedin',
+    'appName': 'Linkedin',
     'shareUrl': 'https://www.linkedin.com/sharing/share-offsite/?url=',
     'feedUrl': 'https://www.linkedin.com',
     'image': '/images/linkedin.png',
-    'userName': ''
+    'faIconContent': 'fa fa-linkedin',
+    'color': '#0e76a8'
   },
   {
-    'appName': 'instagram',
+    'appName': 'Instagram',
     'shareUrl': '',
     'feedUrl': 'https://www.instagram.com',
     'image': '/images/instagram.png',
-    'userName': ''
+    'userName': '',
+    'faIconContent': 'fa fa-instagram',
+    'color': '#c32aa3'
   }
 ]

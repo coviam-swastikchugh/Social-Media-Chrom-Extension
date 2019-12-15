@@ -5,13 +5,14 @@
   "description": "This extension will enable you to access all your social media accounts from one place.",
   "version": "1.0",
   "background": {
-    "page": "background.html"
+    "scripts": ["background.js"],
+    "persistent": false
   },
   "content_security_policy": "script-src 'self' 'unsafe-eval' https://connect.facebook.net; object-src 'self'",
 
   "browser_action": {
    "default_icon": "/images/icon.png",
-   "default_popup": "index.html"
+   "default_popup": "popup.html"
   },
   "permissions": [
    "activeTab"
