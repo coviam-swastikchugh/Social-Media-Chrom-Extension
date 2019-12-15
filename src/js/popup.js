@@ -1,6 +1,8 @@
 var date1 = 0, date2 = 0
 window.addEventListener('DOMContentLoaded', (event) => {
-  // var bkg = chrome.extension.getBackgroundPage();
+  var bkg = chrome.extension.getBackgroundPage();
+  let body = document.getElementsByClassName('body')[0]
+
   let panelContainer = document.getElementsByClassName('tabcontent')[0]
   let appGridContainer = document.getElementsByClassName('tabcontent')[1]
   panelContainer.setAttribute('id', tabs[0].containerId)
@@ -8,20 +10,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
   // bkg.console.log(panelContainer)
   appInfo.forEach((app, index) => {
     let panel = document.createElement('app-panel')
+    panel.index = index
     panel.info = app
     panelContainer.appendChild(panel)
-    // document.getElementsByTagName('a')[index].addEventListener('click', () => {
-    //   panel.socialMediaClick(appInfo[index].feedUrl)
-    // })
-    // document.getElementsByTagName('button')[index].addEventListener('click', () => {
-    //   // chrome.tabs.getSelected(null, function(tab) {
-        
-    //   // });
-    //   chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
-    //     var url = tabs[0].url;
-    //     panel.shareClick(appInfo[index].shareUrl, tabs[0].url)
-    //   });
-    // })
   })
   apps.forEach((appData, index) => {
     let app = new AppGrid ()
@@ -41,6 +32,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     panelContainer.innerHTML = ''
     appInfo.forEach((app, index) => {
       let panel = document.createElement('app-panel')
+      panel.index = index
       panel.info = app
       panelContainer.appendChild(panel)
     })
@@ -57,23 +49,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
   })
   this.setActiveTab(event, tabs[0].containerId)
 });
-function fbShare () {
-  chrome.tabs.getSelected(null, function(tab) {
-    window.open( 'https://www.facebook.com/sharer.php?u=' + tab.url, 'sharer', 'toolbar=0, status=0, width=626, height=436');return false;
-  });
-}
-
-function getSelectedTab () {
-  // var bkg = chrome.extension.getBackgroundPage();
-  let a = ''
-  let sTab = chrome.tabs.getSelected(null, function(tab) {
-    // bkg.console.log(tab.url, '========');
-    a = tab.url
-    // return tab.url
-  });
-  // bkg.console.log(sTab, a)
-  return sTab
-}
 
 function setActiveTab (evt, containerId) {
   // var bkg = chrome.extension.getBackgroundPage();
