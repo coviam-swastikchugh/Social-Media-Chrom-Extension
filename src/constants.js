@@ -5,7 +5,8 @@ var appInfo = [
     'feedUrl': 'https://www.facebook.com',
     'image': '/images/facebook.png',
     'faIconContent': 'fa fa-facebook',
-    'color': '#3b5998'
+    'color': '#3b5998',
+    'active': true
   },
   {
     'appName': 'Twitter',
@@ -13,7 +14,8 @@ var appInfo = [
     'feedUrl': 'https://www.twitter.com',
     'image': '/images/twitter.png',
     'faIconContent': 'fa fa-twitter',
-    'color': '#00acee'
+    'color': '#00acee',
+    'active': true
   },
   {
     'appName': 'Linkedin',
@@ -21,27 +23,28 @@ var appInfo = [
     'feedUrl': 'https://www.linkedin.com',
     'image': '/images/linkedin.png',
     'faIconContent': 'fa fa-linkedin',
-    'color': '#0e76a8'
+    'color': '#0e76a8',
+    'active': true
   }
 ]
 
 var apps = [
   {
-    'appName': 'facebook',
+    'appName': 'Facebook',
     'shareUrl': 'https://www.facebook.com/sharer.php?u=',
     'feedUrl': 'https://www.facebook.com',
     'image': '/images/facebook.png',
     'active': false
   },
   {
-    'appName': 'twitter',
+    'appName': 'Twitter',
     'shareUrl': 'http://twitter.com/share?url=',
     'feedUrl': 'https://www.twitter.com',
     'image': '/images/twitter.png',
     'active': false
   },
   {
-    'appName': 'linkedin',
+    'appName': 'Linkedin',
     'shareUrl': 'https://www.linkedin.com/sharing/share-offsite/?url=',
     'feedUrl': 'https://www.linkedin.com',
     'image': '/images/linkedin.png',
@@ -57,31 +60,38 @@ var apps = [
     'active': false
   },
   {
-    'appName': 'amazon',
+    'appName': 'Amazon',
     'shareUrl': '',
-    'feedUrl': 'https://www.amazon.com',
+    'feedUrl': 'https://www.amazon.in',
     'image': '/images/amazon.png',
     'active': false
   },
   {
-    'appName': 'flipkart',
+    'appName': 'Flipkart',
     'shareUrl': '',
     'feedUrl': 'https://www.flipkart.com',
     'image': '/images/flipkart.png',
     'active': false
   },
   {
-    'appName': 'myntra',
+    'appName': 'Myntra',
     'shareUrl': '',
     'feedUrl': 'https://www.myntra.com',
     'image': '/images/myntra.png',
     'active': false
   },
   {
-    'appName': 'wikipedia',
+    'appName': 'Wikipedia',
     'shareUrl': '',
     'feedUrl': 'https://www.wikipedia.com',
     'image': '/images/wikipedia.png',
+    'active': false
+  },
+  {
+    'appName': 'peopleHum',
+    'shareUrl': '',
+    'feedUrl': 'https://www.peoplehum.com',
+    'image': '/images/peoplehum.png',
     'active': false
   }
 ]

@@ -6,7 +6,6 @@ class AppPanel extends HTMLElement {
   }
 
   connectedCallback () {
-    var bkg = chrome.extension.getBackgroundPage();
     document.getElementsByClassName('app-panel__container')[this.index].addEventListener('mouseenter', (event) => {
       document.documentElement.style.setProperty('--background-color', appInfo[this.index].color);
       document.getElementsByClassName('app-panel__container')[this.index].innerHTML = this.displayIconFormat()
@@ -26,7 +25,7 @@ class AppPanel extends HTMLElement {
           height: 30px;
           background-color: #fda172;
           border-bottom: 1px solid #5b606a;
-          padding: 8px;
+          padding: 11.5px 0px;
           text-align: center;
         }
         .app-panel__container-text {
@@ -72,7 +71,6 @@ class AppPanel extends HTMLElement {
   }
 
   addClickEvent () {
-    var bkg = chrome.extension.getBackgroundPage();
     if (document.getElementsByClassName('app-panel__share-icon')[0]) {
       document.getElementsByClassName('app-panel__share-icon')[0].addEventListener('click', () => {
         var shareUrl = appInfo[this.index].shareUrl

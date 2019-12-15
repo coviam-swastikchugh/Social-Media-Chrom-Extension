@@ -9,7 +9,7 @@ class CustomTab extends HTMLElement {
         border: none;
         outline: none;
         cursor: pointer;
-        padding: 4px 6px;
+        padding: 8px;
         transition: 0.3s;
         font-size: 12px;
         width: 50%;
@@ -25,28 +25,30 @@ class CustomTab extends HTMLElement {
       }
 
       .tab-image {
-        width: 20px;
-        height: 20px;
+        width: 22px;
+        height: 22px;
+      }
+
+      .tab-selected {
+        background-color: #cdcdcd;
       }
     </style>
     `
   }
   set init (tab) {
     this.innerHTML+= `
-    <button class="tablinks">
-      <img class="tab-image" src="${tab.icon}" id="${tab.tabId}">
+    <button class="tablinks" id="${tab.tabId}">
+      <img class="tab-image" src="${tab.icon}">
     </button>
     `
   }
 
-  setActiveTab (evt, tabId) {
+  setActiveTab (tabId) {
     let tablinks = document.getElementsByClassName("tablinks");
     for (let i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
+      tablinks[i].className = tablinks[i].className.replace(" tab-selected", "");
     }
-    // let bkg = chrome.extension.getBackgroundPage()
-    // bkg.console.log(document.getElementById(tabId), '=======')
-    document.getElementById(tabId).className += " active";
+    document.getElementById(tabId).className += " tab-selected";
   }
 }
 
