@@ -4,7 +4,7 @@ class SaveButton extends HTMLElement {
     this.innerHTML = `
       <style>
         .save-button-container {
-          text-align: right;
+          text-align: center;
           width: 100%;
         }
         #save-preferences {
@@ -14,6 +14,7 @@ class SaveButton extends HTMLElement {
       <div class="save-button-container">
         <i id="save-preferences" class="fa fa-check-circle fa-2x"></i>
       </div>
+      <p style="padding: 2px 0px; margin: 0px;">You can only select 3 apps.</p>
     `
   }
 

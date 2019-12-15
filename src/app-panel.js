@@ -5,7 +5,6 @@ class AppPanel extends HTMLElement {
   }
 
   connectedCallback () {
-    // var bkg = chrome.extension.getBackgroundPage();
     document.getElementsByClassName('app-panel__container')[this.index].addEventListener('mouseenter', (event) => {
       document.documentElement.style.setProperty('--background-color', appInfo[this.index].color);
       document.getElementsByClassName('app-panel__container')[this.index].innerHTML = this.displayIconFormat()
@@ -21,11 +20,11 @@ class AppPanel extends HTMLElement {
       <style>
         .app-panel__container {
           display: inline-block;
-          width: 160px;
+          width: 180px;
           height: 30px;
           background-color: #696969;
           border-bottom: 1px solid #5b606a;
-          padding: 8px 0px;
+          padding: 11.5px 0px;
           text-align: center;
         }
         .app-panel__container-text {
@@ -34,11 +33,13 @@ class AppPanel extends HTMLElement {
           font-family: 'Source Sans Pro';
         }
         .app-panel__container:hover {
-          background-color: var(--background-color)
+          background-color: var(--background-color);
         }
         .app-panel__share-icon{
           width: 50%;
           float: right;
+          display: inline-block;
+          margin-top: -24px;
         }
         .app-panel__search-input {
           width: 90px;
@@ -57,15 +58,15 @@ class AppPanel extends HTMLElement {
           cursor: pointer;
         }
         .left-align {
-          width: 50%;
-          float: left;
+          text-align: left;
+          padding: 0px 40px;
         }
         img {
           height: 30px;
           width: 30px;
           cursor: pointer;
         }
-      </style> <div class="app-panel__container">` + this.displayNameFormat() +`</div>`
+      </style><div class="app-panel__container">` + this.displayNameFormat() +`</div>`
   }
 
   socialMediaClick (url) {
@@ -87,7 +88,6 @@ class AppPanel extends HTMLElement {
   }
 
   addClickEvent () {
-    var bkg = chrome.extension.getBackgroundPage();
     if (document.getElementsByClassName('app-panel__share-icon')[0]) {
       document.getElementsByClassName('app-panel__share-icon')[0].addEventListener('click', () => {
         var shareUrl = appInfo[this.index].actionUrl

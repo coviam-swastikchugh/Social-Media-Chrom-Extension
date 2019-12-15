@@ -6,7 +6,8 @@ var appInfo = [
     'feedUrl': 'https://www.facebook.com',
     'image': '/images/facebook.png',
     'faIconContent': 'fa fa-facebook',
-    'color': '#3b5998'
+    'color': '#3b5998',
+    'active': true
   },
   {
     'appName': 'Twitter',
@@ -15,7 +16,8 @@ var appInfo = [
     'feedUrl': 'https://www.twitter.com',
     'image': '/images/twitter.png',
     'faIconContent': 'fa fa-twitter',
-    'color': '#00acee'
+    'color': '#00acee',
+    'active': true
   },
   {
     'appName': 'Linkedin',
@@ -24,7 +26,8 @@ var appInfo = [
     'feedUrl': 'https://www.linkedin.com',
     'image': '/images/linkedin.png',
     'faIconContent': 'fa fa-linkedin',
-    'color': '#0e76a8'
+    'color': '#0e76a8',
+    'active': true
   }
 ]
 
@@ -114,7 +117,7 @@ var apps = [
     'actionType': '',
     'actionUrl': '',
     'feedUrl': 'https://www.peoplehum.com',
-    'image': '',
+    'image': '/images/peoplehum.png',
     'faIconContent': '',
     'color': 'white',
     'active': false
