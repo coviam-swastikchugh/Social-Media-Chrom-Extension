@@ -22,9 +22,9 @@ class AppPanel extends HTMLElement {
       <style>
         .app-panel__container {
           display: inline-block;
-          width: 130px;
+          width: 170px;
           height: 30px;
-          background-color: #3e444f;
+          background-color: #fda172;
           border-bottom: 1px solid #5b606a;
           padding: 8px;
           text-align: center;

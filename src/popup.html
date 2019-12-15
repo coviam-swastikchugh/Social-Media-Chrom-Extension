@@ -2,19 +2,53 @@
 <html>
   <head>
     <title>Social Media Extension</title>
+    <!-- <script async defer src="https://connect.facebook.net/es_LA/sdk.js"></script>  -->
+    <script src="./share-button.js"></script>
     <script src="./js/popup.js"></script>
     <script src="./constants.js"></script>
     <script src="./app-panel.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+    <script src="./custom-tab.js"></script>
+    <script src="./app-grid.js"></script>
+    <script src="./save-button.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="body"></div>
+    <div class="header">
+      Connect :)
+    </div>
+    <div class="body">
+      <div class="tabcontent"></div>
+      <div class="tabcontent"></div>
+    </div>
+    <div class="footer">
+    </div>
   </body>
 </html>
 
 <style>
   body {
     margin: 0;
+    width: 170px;
+  }
+  .header {
+    color: #888;
+    font-size: 20px;
+    padding: 8px 0px;
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    border-bottom: 1px solid #cdcdcd;
+    width: 100%;
+    display: block;
+  }
+  .footer {
+    color: #bdbdbd;
+    font-size: 10px;
+    text-align: right;
+    cursor: pointer;
+    display: block;
+  }
+  .tabcontent {
+    display: none;
   }
 </style>
