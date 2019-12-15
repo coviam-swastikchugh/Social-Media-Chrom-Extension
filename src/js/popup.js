@@ -9,7 +9,7 @@ chrome.storage.local.get("appInfo", function(result){
 })
 window.addEventListener('DOMContentLoaded', (event) => {
   setTimeout(() => {
-    var bkg = chrome.extension.getBackgroundPage();
+    // var bkg = chrome.extension.getBackgroundPage();
     let body = document.getElementsByClassName('body')[0]
     let panelContainer = document.getElementsByClassName('tabcontent')[0]
     let appGridContainer = document.getElementsByClassName('tabcontent')[1]
@@ -83,7 +83,7 @@ function setActiveTab (containerId) {
 }
 
 function setActiveAppsInAllApps () {
-  var bkg = chrome.extension.getBackgroundPage();
+  // var bkg = chrome.extension.getBackgroundPage();
   apps.forEach(app => {
     app.active = false
   })

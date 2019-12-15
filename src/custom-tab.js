@@ -4,7 +4,7 @@ class CustomTab extends HTMLElement {
     this.innerHTML+=`
     <style>
       .tablinks {
-        background-color: inherit;
+        background-color: #696969;
         float: left;
         border: none;
         outline: none;
@@ -13,15 +13,12 @@ class CustomTab extends HTMLElement {
         transition: 0.3s;
         font-size: 12px;
         width: 50%;
-        border: 1px solid #ccc;
+        border: 1px solid #5b606a;
+        border-bottom: 3px solid #696969;
       }
       
       .tablinks:hover {
-        background-color: #ddd;
-      }
-      
-      .tablinks.active {
-        background-color: #ccc;
+        background-color: #bbb;
       }
 
       .tab-image {
@@ -30,7 +27,7 @@ class CustomTab extends HTMLElement {
       }
 
       .tab-selected {
-        background-color: #cdcdcd;
+        border-bottom: 3px solid white;
       }
     </style>
     `
@@ -38,7 +35,7 @@ class CustomTab extends HTMLElement {
   set init (tab) {
     this.innerHTML+= `
     <button class="tablinks" id="${tab.tabId}">
-      <img class="tab-image" src="${tab.icon}">
+    <i class="${tab.icon} fa-2x" aria-hidden="true"></i>
     </button>
     `
   }

@@ -11,7 +11,7 @@ class AppGrid extends HTMLElement {
           height: 33px;
           display: inline-block;
           margin: 0px 5px;
-          padding: 3px 4px;
+          padding: 3px 5px;
         }
         .active {
           -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
@@ -33,7 +33,7 @@ class AppGrid extends HTMLElement {
   }
 
   setActiveApp (apps, index) {
-    let bkg = chrome.extension.getBackgroundPage()
+    // let bkg = chrome.extension.getBackgroundPage()
     let requiredApp = document.getElementsByClassName('grid-app-image')[index]
     let count = 0
     if (requiredApp.classList.contains('active')) {
@@ -49,7 +49,7 @@ class AppGrid extends HTMLElement {
         requiredApp.classList.add('active')
         apps[index].active = true
       } else {
-        bkg.console.log('cannot add more than 3')
+        // bkg.console.log('cannot add more than 3')
       }
     }
     return apps
