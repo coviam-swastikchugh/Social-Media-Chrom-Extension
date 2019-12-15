@@ -1,12 +1,11 @@
 class AppPanel extends HTMLElement {
   index = '';
-  shareUrl = ''
   constructor () {   
     super()
   }
 
   connectedCallback () {
-    var bkg = chrome.extension.getBackgroundPage();
+    // var bkg = chrome.extension.getBackgroundPage();
     document.getElementsByClassName('app-panel__container')[this.index].addEventListener('mouseenter', (event) => {
       document.documentElement.style.setProperty('--background-color', appInfo[this.index].color);
       document.getElementsByClassName('app-panel__container')[this.index].innerHTML = this.displayIconFormat()
@@ -22,11 +21,11 @@ class AppPanel extends HTMLElement {
       <style>
         .app-panel__container {
           display: inline-block;
-          width: 170px;
+          width: 160px;
           height: 30px;
-          background-color: #fda172;
+          background-color: #696969;
           border-bottom: 1px solid #5b606a;
-          padding: 8px;
+          padding: 8px 0px;
           text-align: center;
         }
         .app-panel__container-text {
@@ -41,16 +40,30 @@ class AppPanel extends HTMLElement {
           width: 50%;
           float: right;
         }
+        .app-panel__search-input {
+          width: 90px;
+          height: 15px;
+          border-radius: 4px;
+          text-align: center;
+        }
+        .app-panel__search-button {
+          padding: 0px 5px;
+          font-size: 20px;
+        }
         .fa {
           color: white;
           content: "\f09a"
-          font-size: 14px;
           text-align: center;
           cursor: pointer;
         }
         .left-align {
           width: 50%;
           float: left;
+        }
+        img {
+          height: 30px;
+          width: 30px;
+          cursor: pointer;
         }
       </style> <div class="app-panel__container">` + this.displayNameFormat() +`</div>`
   }
@@ -64,8 +77,10 @@ class AppPanel extends HTMLElement {
   }
 
   displayIconFormat () {
-    if (appInfo[this.index].shareUrl) {
+    if (appInfo[this.index].actionType === 'share') {
       return this.feedAndShare()
+    } else if (appInfo[this.index].actionType === 'search') {
+      return this.onlySearch()
     } else {
       return this.onlyFeed()
     }
@@ -75,16 +90,29 @@ class AppPanel extends HTMLElement {
     var bkg = chrome.extension.getBackgroundPage();
     if (document.getElementsByClassName('app-panel__share-icon')[0]) {
       document.getElementsByClassName('app-panel__share-icon')[0].addEventListener('click', () => {
-        var shareUrl = appInfo[this.index].shareUrl
+        var shareUrl = appInfo[this.index].actionUrl
           chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
             var appPanelInstance = new AppPanel()
             appPanelInstance.socialMediaClick(shareUrl + tabs[0].url)
           });
       })
     }
-    document.getElementsByClassName('app-panel__feed-icon')[0].addEventListener('click', () => {
-      this.socialMediaClick(appInfo[this.index].feedUrl)
-    })
+    if (document.getElementsByClassName('app-panel__feed-icon')[0]) {
+      document.getElementsByClassName('app-panel__feed-icon')[0].addEventListener('click', () => {
+        this.socialMediaClick(appInfo[this.index].feedUrl)
+      }) 
+    }
+    if (document.getElementsByClassName('app-panel__search-button')[0]) {
+      document.getElementsByClassName('app-panel__search-button')[0].addEventListener('click', (e) => {
+        this.wikipediaSearch(document.getElementsByClassName('app-panel__search-input')[0].value)
+      })
+      document.getElementsByClassName('app-panel__search-input')[0].addEventListener('keypress', (e) => {
+        var key = e.which || e.keyCode;
+        if (key === 13) {
+          this.wikipediaSearch(e.target.value)
+        }
+      })
+    }
   }
 
   feedAndShare () {
@@ -97,9 +125,26 @@ class AppPanel extends HTMLElement {
   }
 
   onlyFeed () {
-    return `<div class="app-panel__feed-icon">
+    if (appInfo[this.index].faIconContent) {
+      return `<div class="app-panel__feed-icon">
               <i class="${appInfo[this.index].faIconContent} fa-2x" aria-hidden="true"></i>
             </div>`
+    } else {
+      return `<div class="app-panel__feed-icon">
+              <img src="${appInfo[this.index].image}">
+            </div>`
+    }
+  }
+
+  onlySearch () {
+    return `<div class="app-panel__search">
+              <input type="text" class="app-panel__search-input"/>
+              <i class="fa fa-search fa-2x app-panel__search-button" aria-hidden="true"></i>
+            </div>`
+  }
+
+  wikipediaSearch (keyWord) {
+    window.open(appInfo[this.index].actionUrl+keyWord)
   }
 }
 

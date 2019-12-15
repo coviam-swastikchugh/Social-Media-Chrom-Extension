@@ -1,6 +1,6 @@
 var date1 = 0, date2 = 0
 window.addEventListener('DOMContentLoaded', (event) => {
-  var bkg = chrome.extension.getBackgroundPage();
+  // var bkg = chrome.extension.getBackgroundPage();
   let body = document.getElementsByClassName('body')[0]
 
   let panelContainer = document.getElementsByClassName('tabcontent')[0]

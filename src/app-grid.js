@@ -11,11 +11,14 @@ class AppGrid extends HTMLElement {
           height: 33px;
           display: inline-block;
           margin: 0px 5px;
+          border:solid 1px transparent;
         }
         .active {
-          mask-image: linear-gradient(black 0%, transparent 100%);
-          -webkit-mask-image: linear-gradient(black 0%, transparent 100%);
-        }
+          -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+            0 0 8px rgba(100, 100, 100, 0.9);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+            0 0 8px rgba(100, 100, 100, 0.9);
+              }
       </style>
       <img class="grid-app-image" src="${app.image}">
     `
