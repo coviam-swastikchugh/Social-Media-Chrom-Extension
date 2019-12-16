@@ -7,6 +7,8 @@ class AppPanel extends HTMLElement {
   connectedCallback () {
     document.getElementsByClassName('app-panel__container')[this.index].addEventListener('mouseenter', (event) => {
       document.documentElement.style.setProperty('--background-color', appInfo[this.index].color);
+      let bkg = chrome.extension.getBackgroundPage()
+      bkg.console.log(appInfo[this.index].color)
       document.getElementsByClassName('app-panel__container')[this.index].innerHTML = this.displayIconFormat()
       this.addClickEvent()
     })
@@ -104,12 +106,12 @@ class AppPanel extends HTMLElement {
     }
     if (document.getElementsByClassName('app-panel__search-button')[0]) {
       document.getElementsByClassName('app-panel__search-button')[0].addEventListener('click', (e) => {
-        this.wikipediaSearch(document.getElementsByClassName('app-panel__search-input')[0].value)
+        this.searchKeyword(document.getElementsByClassName('app-panel__search-input')[0].value)
       })
       document.getElementsByClassName('app-panel__search-input')[0].addEventListener('keypress', (e) => {
         var key = e.which || e.keyCode;
         if (key === 13) {
-          this.wikipediaSearch(e.target.value)
+          this.searchKeyword(e.target.value)
         }
       })
     }
@@ -143,8 +145,20 @@ class AppPanel extends HTMLElement {
             </div>`
   }
 
-  wikipediaSearch (keyWord) {
-    window.open(appInfo[this.index].actionUrl+keyWord)
+  searchKeywordGen (appName, keyword) {
+    if (keyword.split(' ').length > 1) {
+      if (appName === 'Amazon') {
+        return keyword.split(' ').join('+')
+      } else if (appName === 'Flipkart') {
+        return keyword
+      } else if (appName === 'Myntra') {
+        return keyword.split(' ').join('-')
+      }
+    } else return keyword
+  }
+
+  searchKeyword (keyWord) {
+    window.open(appInfo[this.index].actionUrl + this.searchKeywordGen(appInfo[this.index].appName, keyWord))
   }
 }
 
