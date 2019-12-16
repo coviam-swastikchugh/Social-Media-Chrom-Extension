@@ -74,8 +74,8 @@ var apps = [
   },
   {
     'appName': 'Amazon',
-    'actionType': '',
-    'actionUrl': '',
+    'actionType': 'search',
+    'actionUrl': 'https://www.amazon.in/s?k=',
     'feedUrl': 'https://www.amazon.com',
     'image': '/images/amazon.png',
     'faIconContent': 'fa fa-amazon',
@@ -84,8 +84,8 @@ var apps = [
   },
   {
     'appName': 'Flipkart',
-    'actionType': '',
-    'actionUrl': '',
+    'actionType': 'search',
+    'actionUrl': 'https://www.flipkart.com/search?q=',
     'feedUrl': 'https://www.flipkart.com',
     'image': '/images/flipkart.png',
     'faIconContent': '',
@@ -94,12 +94,12 @@ var apps = [
   },
   {
     'appName': 'Myntra',
-    'actionType': '',
-    'actionUrl': '',
+    'actionType': 'search',
+    'actionUrl': 'https://www.myntra.com/',
     'feedUrl': 'https://www.myntra.com',
     'image': '/images/myntra.png',
     'faIconContent': '',
-    'color': 'white',
+    'color': '#29303E',
     'active': false
   },
   {
@@ -116,7 +116,7 @@ var apps = [
     'appName': 'peopleHum',
     'actionType': '',
     'actionUrl': '',
-    'feedUrl': 'https://www.peoplehum.com',
+    'feedUrl': 'https://portal.peoplehum.com/main/app/dashboard',
     'image': '/images/peoplehum.png',
     'faIconContent': '',
     'color': 'white',
